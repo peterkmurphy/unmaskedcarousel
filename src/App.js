@@ -30,19 +30,46 @@ export default class App extends Component {
       "IMG_0352.jpg",
       "IMG_0441.jpg",
       "Megan 1.jpg",
+      "IMG_0715.JPG",
+      "IMG_0635 2.jpg",
+      "IMG_0633 2.jpg",
+      "IMG_0582 2.JPG",
+      "IMG_0546.jpg",
+      "IMG_0569 2.jpg",
     ];
 
-    const items = []
+    const items = [];
 
     for (const [index, value] of unmaskedFiles.entries()) {
-      items.push(<img key={index} src={`/unmasked/${value}`} height="800" alt={value} />)
+      items.push(
+        <img key={index} src={`/unmasked/${value}`} height="800" alt={value} />
+      );
     }
 
+    let videobit = (
+      <div className="centreIt">
+        <video height="800" className="centreIt" controls loop>
+          <source
+            className="centreIt"
+            src="/unmasked/UnmaskedMeganVertical.webm"
+            type="video/webm"
+          />
+          Your browser doesn not suppot video.
+        </video>
+      </div>
+    );
 
-    return (
-      <Carousel autoPlay={3000} animationSpeed={1000} infinite={true}>
+    let caroselbit = (
+      <Carousel autoPlay={5000} animationSpeed={1000} infinite={true}>
         {items}
       </Carousel>
+    );
+
+    return (
+      <>
+        {caroselbit}
+        {videobit}
+      </>
     );
   }
 }
