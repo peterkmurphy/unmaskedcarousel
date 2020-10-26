@@ -60,7 +60,7 @@ export default class App extends Component {
     );
 
     let caroselbit = (
-      <Carousel autoPlay={5000} animationSpeed={1000} infinite={true}>
+      <Carousel autoPlay={6000} animationSpeed={2000} infinite={true}>
         {items}
       </Carousel>
     );
